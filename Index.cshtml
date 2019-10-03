@@ -1,0 +1,48 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<section class="text-center">
+    <h1 class="display-4">@Model.movie</h1>
+</section>
+<section style="background-color:crimson;color:darkslategrey" class="row text-capitalize">
+    <aside class="col-lg-4 col-md-4 col-sm-12">
+        <p>These movies are amazing to watch</p>
+    </aside>
+    <aside class="col-lg-4 col-md-4 col-sm-12">
+        <p>They will make you cry, laugh, and jump in your seats.</p>
+    </aside>
+</section>
+<section>
+    @foreach (string movie in NewFolder.movie)
+    {
+        <aside class="text-center">
+            <span class="display-3">Movie title</span>
+            <span class="display-3">@movie.</span>
+        </aside>
+    }
+    <section>
+        @foreach (var item in NewFolder.Movie)
+        {
+    <aside class="text-center">
+        <span class="display-3">movieid:</span>
+        <span class="display-3">@movie.movieid</span>
+    </aside>
+    <aside class="text-center">
+        <span class="display-3">title:</span>
+        <span class="display-3">@movie.title</span>
+    </aside>
+    <aside class="text-center">
+        <span class="display-3">director:</span>
+        <span class="display-3">@movie.director</span>
+    </aside>
+    <aside class="text-center">
+        <span class="display-3">rating:</span>
+        <span class="display-3">@movie.rating</span>
+    </aside>
+        }
+    </section>
+</section>
+
